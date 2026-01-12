@@ -1,0 +1,52 @@
+import promptSync from "prompt-sync";
+const prompt = promptSync();
+
+function somma(x, y) {
+    return x + y;
+}
+
+function sottrazione(x, y) {
+    return x - y;
+}
+
+function moltiplicazione(x, y) {
+    return x * y;
+}
+
+function divisione(x, y) {
+    return x / y;
+}
+
+function main() {
+    let num1 = parseFloat(prompt("Inserisci il primo numero\n"));
+    let num2 = parseFloat(prompt("Inserisci il secondo numero\n"));
+    
+    while (1) {
+        console.log("+) somma");
+        console.log("-) sottrazione");
+        console.log("*) moltiplicazione");
+        console.log("/) divisione");
+        
+        let operazione = prompt("0) esci\n");
+        
+        switch (operazione) {
+            case "+":
+                console.log(`${num1} ${operazione} ${num2} = ${somma(num1, num2)}`);
+                break;
+            case "-":
+                console.log(`${num1} ${operazione} ${num2} = ${sottrazione(num1, num2)}`);
+                break;
+            case "*":
+                console.log(`${num1} ${operazione} ${num2} = ${moltiplicazione(num1, num2)}`);
+                break;
+            case "/":
+                console.log(`${num1} ${operazione} ${num2} = ${divisione(num1, num2)}`);
+                break;
+        }
+
+        if (operazione == 0)
+            break;
+    }
+}
+
+main();
